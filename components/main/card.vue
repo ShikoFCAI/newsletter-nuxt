@@ -1,6 +1,4 @@
 <script setup>
-const { isDesktop } = useDevice();
-
 const inputText = ref("")
 const isValid = ref(false);
 
@@ -31,8 +29,8 @@ points.value = [
 
 <template>
     <div v-if="!isSuccess" class="flex flex-col lg:flex-row lg:gap-12 lg:p-4 bg-white rounded-3xl">
-        <GraphicDesktop v-if="isDesktop" class="lg:order-2" />
-        <GraphicMobile class="w-full" v-else />
+        <GraphicDesktop  class="lg:order-2 max-lg:hidden" />
+        <GraphicMobile class="w-full lg:hidden" />
         <div class="flex flex-col gap-8 py-10 lg:py-20 px-4 lg:pr-4 lg:pl-8 lg:order-1">
             <h1 class="text-5xl text-theme-darkSlateGrey font-bold">Stay updated!</h1>
             <p class="text-theme-darkSlateGrey w-11/12">Join 60,000+ product managers receiving monthly updates on:</p>
@@ -60,4 +58,4 @@ points.value = [
         </p>
         <MainButton class="" @click="swap">Dismiss message</MainButton>
     </div>
-</template>
+</template>s
